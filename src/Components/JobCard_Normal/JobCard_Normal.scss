@@ -1,0 +1,27 @@
+
+.job-card {
+     margin-top: 20px;
+     background-color: #fff;
+     height: 270px;
+     box-shadow: -1px 3px 8px -1px rgba(0, 0, 0, 0.1);
+     border-radius: 4px;
+     display: flex;
+     flex-direction: column;
+     cursor: pointer;
+     padding: 0 0 20px 20px;
+     color: var(--body-color-light);
+}
+
+.job-card-img {
+     width: 160px;
+     margin-top: -35px;
+     border-radius: 2px;
+     box-shadow: 0 1px 7px 2px #c7c9d3;
+     border-bottom: 1px solid #dcddde;
+     object-fit: cover;
+     margin-bottom: 20px;
+     transition: .3s ease;
+     &:hover {
+          transform: scale(1.04);
+     }
+}

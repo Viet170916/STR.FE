@@ -1,13 +1,16 @@
 import axios from "axios";
-import React, { ChangeEvent, JSX, useEffect, useRef, useState } from "react";
+import React, { ChangeEvent, FormEvent, JSX, useEffect, useRef, useState } from "react";
+import { BsSearch } from "react-icons/bs";
 import "./SearchBar_Hint.scss";
 
 interface ISearchBarProps{
   placeholder: string;
   baseHintUrl: string;
-  endPoint: string;
+  hintEndPoint: string;
+  className: string;
+  requestFunction: Function;
+  searchIcon: JSX.Element;
 }
-
 function SearchBar_Hint( searchBarProps: ISearchBarProps ): JSX.Element{
   const listElement = useRef( null );
   const [ hints, setHints ] = useState( [] );
@@ -16,53 +19,65 @@ function SearchBar_Hint( searchBarProps: ISearchBarProps ): JSX.Element{
   useEffect( () => {
       const handleClickOutside = ( event: MouseEvent ) => {
         if( listElement.current && !listElement.current.contains( event.target as Node ) ){
-          console.log( 'Clicked outside the target element.' );
           setHints( [] );
-          // Thêm mã lệnh của bạn ở đây
         }
       };
-      document.addEventListener("mousedown",handleClickOutside) ;
+      document.addEventListener( "mousedown", handleClickOutside );
       return () => {
-        document.removeEventListener('mousedown', handleClickOutside);
+        document.removeEventListener( 'mousedown', handleClickOutside );
       };
-
     },
     [] );
   //fetch data:
   useEffect( () => {
     (async() => {
-      const data = await axios.get( searchBarProps.endPoint, {
+      const data = await axios.get( searchBarProps.hintEndPoint, {
         baseURL: searchBarProps.baseHintUrl,
         params: { q: textSearch },
       } );
-      setHints( textSearch ? data.data.products : [] );
+      setHints( textSearch ? data.data : [] );
     })();
   }, [ textSearch ] );
   //return
   return (
-    <div>
-      <input
-        type="text"
-        placeholder={ searchBarProps.placeholder }
-        value={ textSearch }
-        onChange={ ( event: ChangeEvent<HTMLInputElement> ) => {setTextSearch( event.target.value );} }
-      />
-      <div className={ "hint-list" }>
-        <ul ref={ listElement }>
-          { hints.map(
-            ( hint, index ) =>
-              (<li key={ index }>
-                <div
-                  className={ "option" }
-                  onClick={ () => {
-                    setHints( [] );
-                    setTextSearch( hint?.title );
-                  } }>{ hint.title }
-                </div>
-              </li>) ) }
-        </ul>
+    <form
+      onSubmit = {
+        ( event: FormEvent<HTMLFormElement> ) => {
+          event.preventDefault();
+          searchBarProps.requestFunction?.( event );
+        }
+      }
+    >
+      <div className = { "search-bar " + searchBarProps.className }>
+        <div className = { "search-area" }>
+          <input
+            type = "text"
+            placeholder = { searchBarProps.placeholder }
+            value = { textSearch }
+            onChange = { ( event: ChangeEvent<HTMLInputElement> ) => {setTextSearch( event.target.value );} }
+          />
+          <button>
+            { searchBarProps.searchIcon || <BsSearch /> }
+          </button>
+        </div>
+        <div className = { "hint-list" }>
+          <ul ref = { listElement }>
+            { hints.map(
+              ( hint, index ) =>
+                (<li key = { index }>
+                  <div
+                    className = { "option" }
+                    onClick = { () => {
+                      setHints( [] );
+                      setTextSearch( hint );
+                    } }
+                  >{ hint }
+                  </div>
+                </li>) ) }
+          </ul>
+        </div>
       </div>
-    </div>
+    </form>
   );
 }
 export default SearchBar_Hint;

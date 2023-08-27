@@ -1,0 +1,10 @@
+.filter{
+     padding: 4px!important;
+}
+.job-types {
+     display: flex !important;
+     .filter-option {
+          padding-left: 5px;
+          font-size:0.8rem;
+     }
+}

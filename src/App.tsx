@@ -1,16 +1,18 @@
-// import { useState } from 'react'
+import { Route, Routes  } from "react-router-dom";
+import './App.css';
+import FilterBar from "./Components/FilterBar";
+import FrameDropDown from "./Components/FrameDropDown";
+import Home from "./Layouts/Home";
 
-
-import './App.css'
-import Header from "./Components/Header";
-
-function App() {
-
+function App(){
+  // console.log(useLocation());
   return (
     <>
-     <Header userImgUrl={"https://randomuser.me/api/portraits/women/63.jpg"} slogan={"readBook"} placeholderSearchBar={"search"}/>
-    </>
-  )
-}
+      <Routes>
+        <Route path = {"/*"} element = { <Home /> } />
+      </Routes>
 
-export default App
+    </>
+  );
+}
+export default App;

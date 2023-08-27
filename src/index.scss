@@ -10,6 +10,8 @@
      --body-color: #3d4954;
      --border-color: #b8bec3;
      --placeholder: #ccd0d2;
+     --base-blur-text-color:#b8bec3;
+     --secondary-background:#3d4954;
 }
 
 * {
@@ -41,7 +43,7 @@ body {
      align-items: center;
 }
 
-.book-store {
+.job-store {
      display: flex;
      flex-direction: column;
      max-width: 1400px;
@@ -52,88 +54,7 @@ body {
      box-shadow: 0 2px 50px 10px rgba(0, 0, 0, 0.21);
 }
 
-.header {
-     @extend %display;
-     height: 70px;
-     width: 100%;
-     background-color: #ffffff;
-     padding: 0 30px;
-     font-size: 14px;
-     font-weight: 500;
-     color: var(--body-color-light);
-     justify-content: space-between;
-     flex-shrink: 0;
-}
 
-.search-bar {
-     position: relative;
-     input {
-          height: 100%;
-          width: 100%;
-          display: block;
-          background-color: transparent;
-          border: none;
-          font-weight: 600;
-          padding: 0 10px 0 40px;
-          background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='none' stroke='%238b939c' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' class='feather feather-search'%3e%3ccircle cx='11' cy='11' r='8'/%3e%3cpath d='M21 21l-4.35-4.35'/%3e%3c/svg%3e");
-          background-repeat: no-repeat;
-          background-size: 15px;
-          background-position: 15px 50%;
-          color: var(--body-color);
-          font-family: var(--body-font);
-          &::placeholder {
-               color: var(--placeholder);
-          }
-     }
-}
-
-.browse {
-     @extend %display;
-     &-category {
-          @extend %display;
-          border-right: 1px solid var(--border-color);
-          white-space: nowrap;
-          svg {
-               width: 16px;
-               margin: 2px 10px 0 8px;
-          }
-     }
-}
-
-.header-title {
-     font-size: 16px;
-     font-weight: 400;
-     margin-right: 120px;
-     span {
-          font-weight: 500;
-          color: var(--body-color);
-     }
-}
-
-.user-img {
-     width: 28px;
-     height: 28px;
-     border-radius: 50%;
-     margin-right: 15px;
-}
-
-.user-profile {
-     position: relative;
-     cursor: pointer;
-     flex-shrink: 0;
-     &:before {
-          content: "";
-          position: absolute;
-          background-color: #f86d72;
-          width: 7px;
-          height: 7px;
-          border-radius: 50%;
-          border: 2px solid var(--theme-bg-color);
-          right: 12px;
-          top: -3px;
-          //border: 2px solid #fff;
-     }
-}
 
 .profile {
      @extend %display;
@@ -149,37 +70,15 @@ body {
      }
 }
 
-.book-slide {
+.job-slide {
      width: 100%;
 }
 
-.book {
+.job {
      background: #fff;
 }
 
-.book-cell {
-     position: relative;
-     display: flex;
-     padding: 25px;
-     width: 40%;
-     height: 250px;
-     margin-right: 1px;
-     &:nth-child(1) {
-          background-color: #fbadaf;
-     }
-     &:nth-child(2) {
-          background-color: #a4e0eb;
-     }
-     &:nth-child(3) {
-          background-color: #edb9d6;
-     }
-     &:nth-child(4) {
-          background-color: #fdca95;
-     }
-     &:nth-child(5) {
-          background-color: #cbb5e2;
-     }
-}
+
 
 .flickity-page-dots {
      display: none;
@@ -209,7 +108,7 @@ body {
      overflow: visible;
 }
 
-.book-photo {
+.job-photo {
      width: 180px;
      flex-shrink: 0;
      bottom: -35px;
@@ -222,22 +121,22 @@ body {
      }
 }
 
-.book-img {
+.job-img {
      flex-shrink: 0;
 }
 
-.book-title {
+.job-title {
      text-overflow: ellipsis;
      white-space: nowrap;
      overflow: hidden;
 }
 
-.book-title {
+.job-title {
      color: #ffffff;
      font-weight: 600;
 }
 
-.book-author {
+.job-author {
      margin-top: 3px;
      font-size: 14px;
      text-overflow: ellipsis;
@@ -245,7 +144,7 @@ body {
      overflow: hidden;
 }
 
-.book-content {
+.job-content {
      padding: 0 20px;
      color: #ffffff;
      overflow: hidden;
@@ -344,7 +243,7 @@ h1 {
      color: #905587;
 }
 
-.book-voters {
+.job-voters {
      color: #fff;
      vertical-align: sub;
      font-size: 13px;
@@ -353,7 +252,7 @@ h1 {
      margin-top: 7px;
 }
 
-.book-sum {
+.job-sum {
      margin-top: 20px;
      font-size: 14px;
      overflow: hidden;
@@ -362,7 +261,7 @@ h1 {
      -webkit-box-orient: vertical;
 }
 
-.book-see {
+.job-see {
      margin-top: 25px;
      text-align: center;
      background-color: #fff;
@@ -375,25 +274,25 @@ h1 {
      &:hover {
           color: #ff6e72;
      }
-     &.book-blue {
+     &.job-blue {
           color: #a4e0eb;
           &:hover {
                color: #22cdec;
           }
      }
-     &.book-pink {
+     &.job-pink {
           color: #edb9d6;
           &:hover {
                color: #ff6dbe;
           }
      }
-     &.book-yellow {
+     &.job-yellow {
           color: #fdca95;
           &:hover {
                color: #fb9124;
           }
      }
-     &.book-purple {
+     &.job-purple {
           color: #cbb5e2;
           &:hover {
                color: #a764ec;
@@ -441,7 +340,7 @@ h1 {
      z-index: 2;
 }
 
-.book-types {
+.job-types {
      margin-left: auto;
      a {
           text-decoration: none;
@@ -450,11 +349,11 @@ h1 {
      }
 }
 
-.book-type + .book-type {
+.job-type + .job-type {
      margin-left: 20px;
 }
 
-.book-type {
+.job-type {
      position: relative;
      transition: 0.2s;
      &.active,
@@ -517,7 +416,7 @@ h1 {
      object-position: center;
 }
 
-.year-book {
+.year-job {
      @extend %display;
      &-img {
           width: 45px;
@@ -535,7 +434,7 @@ h1 {
      }
 }
 
-.year-book-content {
+.year-job-content {
      display: flex;
      flex-direction: column;
      font-size: 14px;
@@ -557,40 +456,13 @@ h1 {
      margin-left: -35px;
 }
 
-.book-cards {
+.job-cards {
      display: grid;
      grid-template-columns: repeat(2, 1fr);
      grid-column-gap: 40px;
      grid-row-gap: 40px;
      padding-top: 40px;
      position: relative;
-}
-
-.book-card {
-     margin-top: 20px;
-     background-color: #fff;
-     height: 270px;
-     box-shadow: -1px 3px 8px -1px rgba(0, 0, 0, 0.1);
-     border-radius: 4px;
-     display: flex;
-     flex-direction: column;
-     cursor: pointer;
-     padding: 0 0 20px 20px;
-     color: var(--body-color-light);
-}
-
-.book-card-img {
-     width: 160px;
-     margin-top: -35px;
-     border-radius: 2px;
-     box-shadow: 0 1px 7px 2px #c7c9d3;
-     border-bottom: 1px solid #dcddde;
-     object-fit: cover;
-     margin-bottom: 20px;
-     transition: .3s ease;
-     &:hover {
-          transform: scale(1.04);
-     }
 }
 
 
@@ -601,14 +473,14 @@ h1 {
      position: relative;
 }
 
-.book-name {
+.job-name {
      font-weight: 500;
      text-overflow: ellipsis;
      overflow: hidden;
      white-space: nowrap;
 }
 
-.book-by {
+.job-by {
      font-size: 13px;
      color: var(--body-color-light);
      margin-top: 4px;
@@ -617,7 +489,7 @@ h1 {
      white-space: nowrap;
 }
 
-.book-rate > label {
+.job-rate > label {
      color: #cccccc;
 }
 
@@ -626,15 +498,15 @@ h1 {
      white-space: nowrap;
 }
 
-.book-rate > input:checked ~ label,
-.book-rate:not(:checked) > label:hover,
-.book-rate:not(:checked) > label:hover ~ label {
+.job-rate > input:checked ~ label,
+.job-rate:not(:checked) > label:hover,
+.job-rate:not(:checked) > label:hover ~ label {
      color: #ff9700;
 }
-.book-rate > input:checked + label:hover,
-.book-rate > input:checked ~ label:hover,
-.book-rate > label:hover ~ input:checked ~ label,
-.book-rate > input:checked ~ label:hover ~ label {
+.job-rate > input:checked + label:hover,
+.job-rate > input:checked ~ label:hover,
+.job-rate > label:hover ~ input:checked ~ label,
+.job-rate > input:checked ~ label:hover ~ label {
      color: #ff9700;
 }
 
@@ -702,38 +574,38 @@ h1 {
 
 
 @media (max-width: 1103px) {
-     .book-cell {
+     .job-cell {
           width: 60%;
      }
 }
 
 @media (max-width: 765px) {
-     .book-cell {
+     .job-cell {
           width: 80%;
      }
 }
 
 @media (max-width: 575px) {
-     .book-cell {
+     .job-cell {
           width: 100%;
      }
 }
 
 @media (max-width: 458px) {
-     .book-photo {
+     .job-photo {
           width: 180px;
      }
-     .book-voters {
+     .job-voters {
           display: none;
      }
 }
 
 @media (max-width: 420px) {
-     .book-see {
+     .job-see {
           width: 120px;
           font-size: 13px;
      }
-     .book-photo {
+     .job-photo {
           width: 130px;
      }
      .main-wrapper {
@@ -754,7 +626,7 @@ h1 {
 }
 
 @media (max-width: 1085px) {
-     .book-rate > label {
+     .job-rate > label {
           font-size: .7em;
      }
 }
@@ -772,10 +644,10 @@ h1 {
      .header-title {
           margin-right: auto;
      }
-     .book-cards {
+     .job-cards {
           grid-template-columns: 1fr;
      }
-     .book-types {
+     .job-types {
           display: none;
      }
 }

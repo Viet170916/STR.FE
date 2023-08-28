@@ -5,16 +5,18 @@
 @import "./src/index";
 .header {
      @extend %display;
+     display: flex;
      z-index: 1000;
-     position: fixed;
+     // position: fixed;
      height: 70px;
      width: 100%;
-     background-color: #ffffff;
+     background-color: #e7e7e7;
      padding: 0 30px;
      font-size: 14px;
      font-weight: 500;
      color: var(--body-color-light);
      justify-content: space-between;
+     flex-wrap: wrap;
      flex-shrink: 0;
 }
 

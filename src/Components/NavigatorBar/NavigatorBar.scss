@@ -1,0 +1,15 @@
+.navigator-bar {
+  display: flex;
+  flex-direction: row;
+  position: sticky;
+  color: rgb(50, 49, 49);
+  width: 100%;
+  top: 0;
+  justify-content: space-around;
+  align-items: center;
+  height: 30px;
+}
+a{
+    color: black;
+    text-decoration: none;
+}

@@ -5,6 +5,7 @@ import FrameDropDown from "../../Components/FrameDropDown";
 import Header from "../../Components/Header";
 import JobCard_Highlight from "../../Components/JobCard_Highlight";
 import JobCard_Normal from "../../Components/JobCard_Normal";
+import NavigatorBar from "../../Components/NavigatorBar";
 import "./Home.scss";
 
 interface IProps{
@@ -17,6 +18,7 @@ function Home( props: IProps ): JSX.Element{
         slogan = { "readBook" }
         placeholderSearchBar = { "search" }
       />
+      <NavigatorBar/>
       <div className = { "container" }>
         <Routes>
           <Route

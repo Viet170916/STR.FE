@@ -9,7 +9,26 @@
   align-items: center;
   height: 30px;
 }
-a{
-    color: black;
-    text-decoration: none;
+a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10%;
+  height: 100%;
+  color: black;
+  text-decoration: none;
+  padding: 20px;
+  font-size: 15px;
+  transition: 0.2s;
+}
+a:hover{
+  transform: scale(1.1);
+  background-color: rgb(179, 179, 179);
+  color: rgb(46, 46, 46);
+  border: solid 1px rgb(155, 155, 155);
+  box-shadow:rgb(77, 77, 77) 5px 5px 5px ;
+}
+.selected{
+  color: rgb(105, 105, 105);
+  background-color: rgb(179, 179, 179);
 }

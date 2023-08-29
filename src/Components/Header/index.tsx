@@ -14,7 +14,6 @@ function Header(headerProps: IProps) {
       <div className="browse">
         <div className="browse-category">
         </div>
-        {/*<label> <input type="text" placeholder={headerProps.placeholderSearchBar}/> </label>*/}
         <SearchBar_Hint
           className="search"
           placeholder={"search"}

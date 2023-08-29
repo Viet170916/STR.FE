@@ -8,7 +8,12 @@ function SalaryFilter( props: IProps ): JSX.Element{
   return (
     <div className = { "frame-drop" }>
       <Slider
+        rangeConfiguration = { {
+          step: 100,
+          range: [ 0, 10000 ],
+        } }
         getData = { () => {} }
+        label = { [ () => "$", () => "$" ] }
       />
     </div>
   );

@@ -1,7 +1,8 @@
 import { JSX } from "react";
 import { Route, Routes } from "react-router-dom";
 import FilterBar from "../../Components/FilterBar";
-import FrameDropDown from "../../Components/FrameDropDown";
+import FrameDropDown from "../../Components/FilterDropDown/LocationFilter";
+import TypeFilter from "../../Components/FilterDropDown/TypeFilter";
 import Header from "../../Components/Header";
 import JobCard_Highlight from "../../Components/JobCard_Highlight";
 import JobCard_Normal from "../../Components/JobCard_Normal";
@@ -50,7 +51,8 @@ function Home( props: IProps ): JSX.Element{
           />
         </Routes>
         <FilterBar />
-        <FrameDropDown/>
+        <TypeFilter/>
+
       </div>
     </div>
   );

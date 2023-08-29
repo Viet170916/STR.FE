@@ -4,6 +4,7 @@
 .job-types {
      display: flex !important;
      .filter-option {
+          min-width: 100px;
           padding-left: 5px;
           font-size:0.8rem;
      }

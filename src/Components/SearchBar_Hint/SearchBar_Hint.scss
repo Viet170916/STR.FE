@@ -1,7 +1,7 @@
 
 .search-bar {
-     z-index: 1000;
      position: relative;
+     max-width: 100%;
      .search-area {
           max-width: 220px;
           display: flex;

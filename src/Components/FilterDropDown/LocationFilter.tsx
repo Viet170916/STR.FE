@@ -1,12 +1,11 @@
-import "./FrameDropDown.scss";
 import { JSX } from "react";
 import { useLocation } from "../../Common/Hooks/LocationHook";
-import { Location } from "../../Models/Location";
 import SearchBar_Hint from "../SearchBar_Hint";
+import "./FilterDropDown.scss"
 
 interface IProps{
 }
-function FrameDropDown( props: IProps ): JSX.Element{
+function LocationFilter( props: IProps ): JSX.Element{
   const {status, getLocation} = useLocation();
 
   return (
@@ -21,4 +20,4 @@ function FrameDropDown( props: IProps ): JSX.Element{
     </div>
   );
 }
-export default FrameDropDown;
+export default LocationFilter;

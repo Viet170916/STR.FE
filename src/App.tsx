@@ -1,7 +1,7 @@
 import { Route, Routes  } from "react-router-dom";
 import './App.css';
 import FilterBar from "./Components/FilterBar";
-import FrameDropDown from "./Components/FrameDropDown";
+import FrameDropDown from "./Components/FilterDropDown/LocationFilter";
 import Home from "./Layouts/Home";
 
 function App(){
@@ -11,6 +11,7 @@ function App(){
       <Routes>
         <Route path = {"/*"} element = { <Home /> } />
       </Routes>
+
 
     </>
   );

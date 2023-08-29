@@ -330,7 +330,6 @@ h1 {
 
 .main-menu {
      @extend %display;
-     white-space: nowrap;
      padding-bottom: 15px;
      border-bottom: 1px solid #dcddde;
      position: sticky;
@@ -359,29 +358,9 @@ h1 {
      &.active,
      &:hover {
           //-webkit-text-stroke: .3px;
-          &:before {
-               content: "";
-               position: absolute;
-               width: 28px;
-               height: 2px;
-               bottom: -17px;
-               right: 15px;
-               background-color: #67d4ea;
-               box-shadow: 0px -1px 5px 0px #67d4ea;
-          }
+
      }
-     &:nth-child(2):before {
-          right: 12px;
-     }
-     &:nth-child(3):before {
-          right: 8px;
-     }
-     &:nth-child(4):before {
-          right: 6px;
-     }
-     &:nth-child(5):before {
-          right: 20px;
-     }
+
 }
 
 .week {
@@ -656,4 +635,7 @@ h1 {
      .card-content {
           padding: 20px;
      }
+}
+.hidden{
+     height: 0;
 }

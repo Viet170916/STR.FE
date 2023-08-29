@@ -1,13 +1,16 @@
 .frame-drop {
      border: var(--base-blur-text-color) solid 1px;
      border-top: none;
-     max-width: 230px;
-     height: content-box;
+
+     width: 200px;
+     height: max-content;
      padding: 20px 0 20px 0;
      display: grid;
      gap: 10px;
      background-color: var(--secondary-background);
      color: var(--base-blur-text-color);
+     position: absolute;
+     margin-top: 5px;
      .get-current-location {
           padding: 10px;
           border-top: var(--base-blur-text-color) solid 1px;
@@ -24,3 +27,5 @@
           caret-color: var(--base-blur-text-color);
      }
 }
+
+

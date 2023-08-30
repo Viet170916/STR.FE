@@ -6,6 +6,7 @@ import TypeFilter from "../../Components/FilterDropDown/TypeFilter";
 import Header from "../../Components/Header";
 import JobCard_Highlight from "../../Components/JobCard_Highlight";
 import JobCard_Normal from "../../Components/JobCard_Normal";
+import CompanyCard from "../../Components/CompanyCard";
 import "./Home.scss";
 
 interface IProps{
@@ -50,6 +51,7 @@ function Home( props: IProps ): JSX.Element{
           }
           />
         </Routes>
+        <CompanyCard></CompanyCard>
         <FilterBar />
         <TypeFilter/>
 

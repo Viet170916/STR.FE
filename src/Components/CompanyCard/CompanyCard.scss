@@ -1,37 +1,121 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+:root {
+  --body-bg-color: #e5f4f9;
+  --body-color-light: #8b939c;
+  --body-font: "Roboto", sans-serif;
+  --page-bg-color: #f2f5f7;
+  --body-color: #3d4954;
+  --border-color: #b8bec3;
+  --placeholder: #ccd0d2;
+}
+
+* {
+  outline: none;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: #fff;
+  background-attachment: fixed;
+  font-family: var(--body-font);
+  color: var(--body-color);
+  font-weight: 400;
+  margin: 0;
+}
+
+.card-container{
+    height: fit-content;
+    width: max-content;
+}
+
 .single-company-card {
-  position: relative;
-  width: 300px !important;
-  height: 400px !important;
-  border: solid 2px lightgray;
-  box-shadow: 0.5em 0.5em 0.5em gray;
-  margin-bottom: 20px;
-  padding: 10px;
-}
-.image-container {
-  background-color: white;
-  position: relative;
-  top: -10%;
-  left: 5%;
+  margin-top: 50px;
+  background-color: #fff;
+  height: 270px;
+  width: 450px;
+  box-shadow: -1px 3px 8px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  border: solid 2px lightgray;
-  width: 30%;
-  height: 20%;
-}
-.company-card-image {
-  width: 100%;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 0 0 20px 20px;
+  color: var(--body-color-light);
+  transition: 0.2s;
+  margin-bottom: 40px;
 }
 
-.company-card-content {
+.single-company-card:hover{
+    border: none !important;
+    background-color: transparent !important;
+    transform: scale(1.02);
+    box-shadow: -1px 3px 3px 5px rgba(90, 92, 94, 0.2);
+}
+
+.company-card-img {
+  width: 160px;
+  margin-top: -35px;
+  border-radius: 2px;
+  box-shadow: 0px 1px 7px 2px #c7c9d3;
+  border-bottom: 1px solid #dcddde;
+  object-fit: cover;
+  margin-bottom: 20px;
+  transition: 0.3s ease;
+}
+.company-card-img:hover {
+  transform: scale(1.04);
+}
+
+.card-content {
+  color: var(--body-color);
+  padding: 30px;
+  overflow: hidden;
   position: relative;
-  background-color: aqua;
-  width: 100%;
-  height: 100px;
 }
 
-.company-card-name{
+.company-name {
+  font-weight: 500;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+// .location::before{
+//     content: "";
+//     background-image: "https://www.flaticon.com/free-icon/placeholder_684809?term=location&page=1&position=25&origin=search&related_id=684809";
+// }
+
+
+.card-sum {
+  color: var(--body-color-light);
+  font-size: 13px;
+  line-height: 1.6em;
+  -webkit-line-clamp: 4;
+  margin-top: 15px;
+}
+
+.content-wrapper {
+  display: flex;
+  border-bottom: 1px solid #ebedef;
+  position: relative;
+}
+@media (max-width: 372px) {
+  .card-content {
+    padding: 20px;
+  }
+}
+
+
+.follow-tag{
     position: relative;
-    left: 40%;
-    // top: -100px;
+    bottom: 65px;
+
 }

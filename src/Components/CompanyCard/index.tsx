@@ -18,11 +18,14 @@ const CompanyCard: React.FC<IProps> = ({
   companyURL,
   isFollowed,
 }) => {
+
+  image="https://images-na.ssl-images-amazon.com/images/I/71PL7BiZ5NL.jpg";
+
   return (
-    <Link to={"#"} className="single-company-card">
+    <Link to={companyURL} className="single-company-card">
       <div className="content-wrapper">
         <img
-          src="https://images-na.ssl-images-amazon.com/images/I/71PL7BiZ5NL.jpg"
+          src={image}
           alt=""
           className="company-card-img"
         />

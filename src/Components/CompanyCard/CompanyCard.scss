@@ -32,9 +32,9 @@ body {
   margin: 0;
 }
 
-.card-container{
-    height: fit-content;
-    width: max-content;
+.card-container {
+  height: fit-content;
+  width: max-content;
 }
 
 .single-company-card {
@@ -53,11 +53,11 @@ body {
   margin-bottom: 40px;
 }
 
-.single-company-card:hover{
-    border: none !important;
-    background-color: transparent !important;
-    transform: scale(1.02);
-    box-shadow: -1px 3px 3px 5px rgba(90, 92, 94, 0.2);
+.single-company-card:hover {
+  border: none !important;
+  background-color: transparent !important;
+  transform: scale(1.01);
+  box-shadow: -1px 3px 3px 5px rgba(90, 92, 94, 0.2);
 }
 
 .company-card-img {
@@ -93,7 +93,6 @@ body {
 //     background-image: "https://www.flaticon.com/free-icon/placeholder_684809?term=location&page=1&position=25&origin=search&related_id=684809";
 // }
 
-
 .card-sum {
   color: var(--body-color-light);
   font-size: 13px;
@@ -107,15 +106,16 @@ body {
   border-bottom: 1px solid #ebedef;
   position: relative;
 }
-@media (max-width: 372px) {
-  .card-content {
-    padding: 20px;
-  }
+
+.working-field {
+  margin-top: 10px;
+  opacity: 80%;
 }
 
-
-.follow-tag{
-    position: relative;
-    bottom: 65px;
-
+.follow-wrapper {
+  height: 10%;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
 }
+
